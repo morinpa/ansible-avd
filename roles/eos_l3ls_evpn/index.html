@@ -1120,8 +1120,8 @@ Default values, are stored in the role defaults <a href="defaults/main.yml">main
 <li>The fabric underlay and overlay topology variables, define the elements related to build the L3 Leaf and Spine fabric.</li>
 <li>The following underlay routing protocols are supported:</li>
 <li>BGP (default)</li>
-<li>OSPF</li>
-<li>ISIS is planned for a future release.</li>
+<li>OSPF.</li>
+<li>ISIS.</li>
 <li>Only summary network addresses need to be defined. IP addresses are then assigned to each node, based on its unique device id.</li>
 <li>To view IP address allocation and consumption, a summary is provided in the auto-generated fabric documentation in Markdown format.</li>
 <li>The variables should be applied to all devices in the fabric.</li>
@@ -1131,12 +1131,16 @@ Default values, are stored in the role defaults <a href="defaults/main.yml">main
 <span class="nt">fabric_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; Fabric_Name &gt;</span>
 
 <span class="c1"># Underlay routing protocol | Required.</span>
-<span class="nt">underlay_routing_protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; BGP or OSPF | Default -&gt; BGP &gt;</span>
+<span class="nt">underlay_routing_protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; BGP or OSPF or ISIS | Default -&gt; BGP &gt;</span>
 
 <span class="c1"># Underlay OSFP | Required when &lt; underlay_routing_protocol &gt; == OSPF</span>
 <span class="nt">underlay_ospf_process_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; process_id | Default -&gt; 100 &gt;</span>
 <span class="nt">underlay_ospf_area</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; ospf_area | Default -&gt; 0.0.0.0 &gt;</span>
-<span class="nt">underlay_ospf_max_lsa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; lsa | default -&gt; 12000 &gt;</span>
+<span class="nt">underlay_ospf_max_lsa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; lsa | Default -&gt; 12000 &gt;</span>
+
+<span class="c1"># Underlay OSFP | Required when &lt; underlay_routing_protocol &gt; == ISIS</span>
+<span class="nt">isis_area_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; isis area | Default -&gt; &quot;49.0001&quot; &gt;</span>
+<span class="nt">isis_site_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; isis site ID | Default -&gt; &quot;0001&quot; &gt;</span>
 
 <span class="c1"># Point to Point Links MTU | Required.</span>
 <span class="nt">p2p_uplinks_mtu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; 0-9216 | default -&gt; 9000 &gt;</span>
